@@ -95,7 +95,7 @@ useEffect(() => {
         placeholder='Description' className='text-[14px] bg-gray flex justify-between text-textGray rounded-[12px] font-normal mb-1 p-3 mx-2 w-[286.65px]' cols={30} rows={2} value={todo?.description} />
         <button
         onClick={handleOnClickSave}
-        className='bg-blue-500 w-full mt-[25px] h-[34px] mx-2 text-center flex items-center justify-center text-[14px] rounded-[10px] font-normal'  type='submit'>
+        className='bg-blue-500 transition-all hover:bg-blue-600 w-full mt-[25px] h-[34px] mx-2 text-center flex items-center justify-center text-[14px] rounded-[10px] font-normal'  type='submit'>
             {loading?(<Loader2 className='animate-spin mr-2' />):"Save"}
         </button></div>
       </div>
