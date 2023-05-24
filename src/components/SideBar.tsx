@@ -81,7 +81,7 @@ useEffect(() => {
 </svg>
  <span className='ml-2 text-[18px] font-normal'>Edit Todo</span>
         </div></div>
-        <div className='flex flex-col items-center justify-center'>
+        <div className='flex flex-col items-center justify-center px-4'>
         <input placeholder='Todo' className='bg-gray rounded-[12px] font-semibold text-[20px] mt-[18px] p-2 mb-2 mx-2 w-[286.65px]' type="text"
         onChange={handleInputChange}
         value={todo?.todo} />
@@ -90,7 +90,7 @@ useEffect(() => {
         placeholder='Description' className='text-[14px] bg-gray flex justify-between text-textGray rounded-[12px] font-normal mb-1 p-3 mx-2 w-[286.65px]' cols={30} rows={2} value={todo?.description} />
         <button
         onClick={handleOnClickSave}
-        className='bg-blue-500 w-[95px] mt-[25px] h-[34px] text-center flex items-center justify-center text-[14px] rounded-[10px] font-normal'  type='submit'>
+        className='bg-blue-500 w-full mt-[25px] h-[34px] mx-2 text-center flex items-center justify-center text-[14px] rounded-[10px] font-normal'  type='submit'>
             {loading?(<Loader2 className='animate-spin mr-2' />):"Save"}
         </button></div>
       </div>
