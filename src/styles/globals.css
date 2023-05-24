@@ -9,7 +9,7 @@
 
   html {
     background-color: #000;
-    overflow-y: hidden;
+    overflow: hidden;
   }
   input, textarea {border:0;outline:0;}
 

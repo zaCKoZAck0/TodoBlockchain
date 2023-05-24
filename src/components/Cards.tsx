@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ListContext } from "../listContext";
 import { Note } from "../interfaces";
 
@@ -11,6 +11,7 @@ interface CardProps{
 
 const Card: React.FC<CardProps> = ({addNote=null, cardType, noteVal={todo:'',description:''}, listId }) => {
   const [note, setNotes] = useState(noteVal)
+  const [border, setBorder] = useState('')
   const Icon = cardType==='empty'?<svg width="16" height="16" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M13.4939 5.34077V8.73452H0V5.34077H13.4939ZM8.59931 0V14.3322H4.9081V0H8.59931Z" fill="white"/>
 </svg>
@@ -23,7 +24,6 @@ const Card: React.FC<CardProps> = ({addNote=null, cardType, noteVal={todo:'',des
     const name = e.target.name;
     setNotes({...note, [name]: e.target.value})
   }
-
     const {setEditOpen, setEditingNote, editingNote} = useContext(ListContext);
 
   const onClick = cardType==='empty'? () =>{
@@ -35,6 +35,13 @@ const Card: React.FC<CardProps> = ({addNote=null, cardType, noteVal={todo:'',des
     console.log(editingNote)
   }
 
+  useEffect(() => {
+     const tempNote = noteVal as Note;
+    editingNote?.listId === listId && 'id' in editingNote && editingNote.id === tempNote.id ? setBorder(' border-l-4 border-blue-500 ') : setBorder('')
+
+  }, [editingNote, listId, noteVal])
+  
+
   // const onAddNoteClick = () =>{
   //   addNote && addNote({...note, listId: listId});
   //   setNotes({ todo: '', description:''})
@@ -42,15 +49,15 @@ const Card: React.FC<CardProps> = ({addNote=null, cardType, noteVal={todo:'',des
 
   return (
 
-    <div className={`bg-cardGray animate-slideFromTop z-0 transition-all duration-500 rounded-[16px] h-[116px] p-3 mx-2 w-[286.65px] ${paddingBottom}`}>
+    <div className={`bg-cardGray animate-slideFromTop z-0 transition-all rounded-[16px] h-[116px] p-3 mx-2 w-[286.65px] ${paddingBottom} ${border}`}>
       <div className="flex">
-<span className="p-2 w-8 h-8 mr-2 -translate-y-1 bg-purple-300 rounded-full flex items-center justify-center"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<span className="p-2 h-[25px] w-[30px] mr-2 bg-purple-300 rounded-full flex items-center justify-center"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M6.9036 3.96558H2.67395C1.86398 4.89136 0.412354 6.76817 0.412354 8.342C0.412354 9.05266 0.728129 11.3718 4.78878 11.3718C8.84943 11.3718 9.1652 9.05266 9.1652 8.342C9.1652 6.76817 7.71357 4.89136 6.9036 3.96558Z" fill="white"/>
 <path d="M4.4525 3.29478V1.94818H5.1258V3.29478H6.68044L8.02703 0.601593H1.55127L2.89786 3.29478H4.4525Z" fill="white"/>
 </svg>
 </span>
         <input disabled={disabled} name="todo" onChange={updateNote} value={note.todo} className="bg-cardGray w-full text-[18px] placeholder:text-textGray pb-[13px] font-bold" placeholder="Add Todo" type="text" />
-<button disabled={!note.todo} onClick={onClick} className="disabled:cursor-default h-[25px] w-[30px] transition-all hover:scale-125 disabled:hover:scale-110 disabled:bg-textGray cursor-pointer scale-110 bg-btnGray rounded-full flex items-center justify-center">{Icon}</button>
+<button disabled={!note.todo} onClick={onClick} className="disabled:cursor-default h-[25px] w-[33px] transition-all hover:scale-125 disabled:hover:scale-110 disabled:bg-textGray cursor-pointer scale-110 bg-btnGray rounded-full flex items-center justify-center">{Icon}</button>
       </div>
       <textarea disabled={disabled} name="description" onChange={updateNote} value={note.description} className="bg-cardGray font-medium w-full text-[16px] placeholder:text-textGrayLight" placeholder={cardType!=='empty'?"No Description":"Add Todo Description"} id="" cols={30} rows={2}></textarea>
     </div>
