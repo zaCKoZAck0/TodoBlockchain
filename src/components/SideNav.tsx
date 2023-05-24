@@ -87,14 +87,14 @@ const SideNav: FC<SideNavProps> = ({ isOpen, onClose }) => {
         </div>
         <div className='bottom-auto left-0 p-4'>
             <div className='flex py-4'>
-                <button className='bg-btnGray w-[97px] h-[35px] flex items-center justify-between px-4 font-normal rounded-[10px] text-[16px]'>
+                <button className='bg-btnGray hover:bg-slate-800 transition-all w-[97px] h-[35px] flex items-center justify-between px-4 font-normal rounded-[10px] text-[16px]'>
                     <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <ellipse cx="8.22" cy="8.525" rx="8.22" ry="8.525" fill="#3772FF"/>
 <path d="M11.2529 12H9.85291L6.68291 7.21001V12H5.28291V5.01001H6.68291L9.85291 9.81001V5.01001H11.2529V12Z" fill="#FEFEFE"/>
 </svg>
 
                     <span className='pl-2'>$0.90</span></button>
-                <button className='ml-1 text-[16px] w-[97px] h-[35px] px-3 bg-btnBlue text-blue-600 font-normal rounded-[10px]'>Buy $XYZ</button>
+                <button className='ml-1 text-[16px] w-[97px] transition-all h-[35px] px-3 bg-btnBlue hover:bg-blue-300 text-blue-600 font-normal rounded-[10px]'>Buy $XYZ</button>
             </div>
             <div className='flex items-center justify-start'>
                 <svg className='' width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">

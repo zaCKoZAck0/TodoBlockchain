@@ -14,7 +14,7 @@ interface SideBarProps {
 
 
 const SideBar: FC<SideBarProps> = ({ isOpen }) => {
-const {editingNote, setEditOpen } = useContext(ListContext);
+const {editingNote, setEditOpen, setRefresh } = useContext(ListContext);
 const [todo, setTodo] = useState<Note>(editingNote as Note);
 const [loading, setLoading] = useState(false)
 
@@ -43,6 +43,7 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     await contract.updateTodo( todo.id, editingNote?.listId, todo.todo, todo.description);
     setLoading(false);
     setEditOpen && setEditOpen(false);
+    setRefresh && setRefresh((prev)=>(!prev))
      } catch (error) {
         alert(error)
         console.log(error)
@@ -50,9 +51,9 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   }
 
             await updateTodo();
+            alert("Todo Updated")
             setTimeout(() => {
               window.location.reload();
-              alert("Updated Todo")
             }, 2000);
             
   }
