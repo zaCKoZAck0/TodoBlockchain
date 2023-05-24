@@ -1,4 +1,4 @@
-import { FC } from 'react'
+
 import { Sun } from 'lucide-react'
 
 

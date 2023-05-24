@@ -1,4 +1,4 @@
-import { FC, useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import SideNav from './SideNav'
 import SideBar from './SideBar'
 import { Menu } from 'lucide-react'

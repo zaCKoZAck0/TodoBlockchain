@@ -1,4 +1,3 @@
-import { Trophy } from "lucide-react";
 import { useContext, useState } from "react";
 import { ListContext } from "../listContext";
 import { Note } from "../interfaces";

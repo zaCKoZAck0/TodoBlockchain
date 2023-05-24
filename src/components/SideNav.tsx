@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { Transition } from '@headlessui/react';
 import DarkLightSwitch from './DarkLightSwitch';
 interface SideNavProps {

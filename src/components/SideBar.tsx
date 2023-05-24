@@ -14,7 +14,7 @@ interface SideBarProps {
 
 
 const SideBar: FC<SideBarProps> = ({ isOpen }) => {
-const {editingNote, setEditOpen , setRefresh} = useContext(ListContext);
+const {editingNote, setEditOpen } = useContext(ListContext);
 const [todo, setTodo] = useState<Note>(editingNote as Note);
 const [loading, setLoading] = useState(false)
 
