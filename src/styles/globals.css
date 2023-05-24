@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  textarea {
+  resize: none;
+  }
+
+  html {
+    background-color: #000;
+    overflow-y: hidden;
+  }
+  input, textarea {border:0;outline:0;}
+
+  input:focus, textarea:focus {outline:none!important;}
+
+  .scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #000;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #242731;
+    border-radius: 100vh;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #191B20;
+  }
+}
