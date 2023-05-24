@@ -1,13 +1,7 @@
-# Sample Hardhat Project
+# Note Taking App on BlockChain
+### Made With :
+![Alt text](https://images.hive.blog/DQmRto7V6jgb3QoaxjN8rDCgmN4RAcyTwXJ3NTGJKw37qdG/what-is-polygone-matic-logo.png)
+![Tailwind CSS](https://static-00.iconduck.com/assets.00/tailwind-css-icon-512x64-vzqzx6f0.png) ![React](https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png)
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+A Note taking app that stores your Notes on Blockchain and Connects your Todos with your wallet for easy retrieval.
+Live: on [Vercel](https://todo-blockchain-3v1x-git-master-zackozack0.vercel.app/)
